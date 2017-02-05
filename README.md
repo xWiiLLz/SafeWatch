@@ -18,7 +18,7 @@ La prochaine étape serait de fournir un plus grand nombre de données à notre 
 Aussi, nous aimerions connecter notre API avec des flux de caméras de surveillance en direct.
 
 
-
+#ENGLISH
 ## Inspiration
 Given the recent events in Quebec city, we were inspired to change how quickly we are able to respond to threat.
 ## What it does
