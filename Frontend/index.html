@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SafeWatch</title>
+	
+	<!--Favicon includes -->
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="manifest.json">
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#000000">
+	<meta name="theme-color" content="#ffffff">
+	<!--End of favicon-->
+	
+	<!-- Bootstrap css -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body ng-app="mainApp" ng-controller="MainController">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="text-xs-center banner">
+					<h1>SafeWatch</h1>
+					<h2>Automatic video-feed shooter detection</h2>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div align="center" class="embed-responsive embed-responsive-16by9">
+					<!--<video id="video" width="600" controls="true" class="embed-responsive-item">
+						<source src="{{vid | trustUrl}}">
+						Your browser does not support HTML5 video tag. Please download FireFox 3.5 or higher.
+					</video>-->
+					<video id="video" width="600" class="embed-responsive-item" controls="controls" name="Video Name" src="videos/{{vid | trustUrl}}.mp4"></video>
+					</div>
+					<p class="center" style="padding-top:10px;">
+					See how a shooter gets detected from this video in real-time.
+					</p>
+          <button type="button" name="button" ng-click="changeVideo('video')">1</button>
+          <button type="button" name="button" ng-click="changeVideo('video5')">2</button>
+          <button type="button" name="button" ng-click="changeVideo('video3')">3</button>
+				</div>
+				<div class="col-md-6 lilBox">
+          <h2 ng-if="alerts.length == 0" class="animate-if red borders">
+            Everything is fine.
+          </h2>
+					<div ng-repeat="entry in alerts | orderBy: '-level'" class="row alert-container" ng-class="{'alert-high' : entry.level>0.5,
+						'alert-med' : entry.level<=0.5 && entry.level > 0.3}">
+						<h3>Potential threat - {{entry.timestamp}}</h3>
+						<span ng-class="{'glyphicon glyphicon-exclamation-sign' : entry.level>0.1}"></span>
+						<span class="glyphicon" ng-class="{'glyphicon-fire' : entry.level >0.5 , 'glyphicon-eye-open' : entry.level <=0.5 && entry.level > 0.3}"></span>
+					</div>
+					<h2 ng-if="alerts.length > 0" class="animate-if red borders" ng-click="clearAlerts()">
+            Click here to clear all alerts.
+          </h2>
+				</div>
+			</div>
+			<!--<div class="row">
+				<div class="col-lg-8 offset-lg-2">
+					<img src="http://cam-cityhall1.delft.nl/mjpg/video.mjpg?timestamp=1486272270028" id="camera-feed"/>
+				</div>
+			</div>-->
+		</div>
+	<span ng-show="videoPlaying==true">Video is playing</span>
+	<canvas id="shot"></canvas>
+	<div class="push"></div>
+	<footer>
+		Project submitted by William Bergeron-Drouin, Alexander Shevchenko & Alexandre Parent
+	</footer>
+	<!--<div ng-app="hackTheTerror">
+		<div ng-controller="MainController">
+		<div class="dropzone" file-dropzone="[image/png, image/jpeg, image/gif]"
+					  file="image" file-name="imageFileName" data-max-file-size="3">
+		  <span>Drop Image Here</span>
+		</div>
+		<div class="image-container">
+		  <img ng-src={{image}} />
+		  <span class="file-name">{{imageFileName}}</span>
+		</div>
+
+		</div>
+
+		<form action>
+		<input type="file" fileread="uploadme.src">
+		<img ng-src="{{ uploadme.src }}">
+		</form>
+
+		</div>-->
+
+
+    <script src="js/angular.min.js" charset="utf-8"></script>
+    <script src="js/angular-animate.min.js" charset="utf-8"></script>
+    <script src="js/angular-touch.min.js" charset="utf-8"></script>
+    <script src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="js/download2.js" charset="utf-8"></script>
+    <script src="js/moment.js" charset="utf-8"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+   </body>
+</html>

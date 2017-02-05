@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div align="center" class="embed-responsive embed-responsive-16by9">
+        <div>
+          <img src="images/shooter1.jpg" width="300px" alt="">
+        </div>
+      </div>
+      <p class="center">
+      See how a shooter gets detected from this video in real-time.
+      </p>
+    </div>
+    <div class="col-md-6 lilBox">
+      <h2 class="center ">Alerts</h2>
+      <div ng-repeat="entry in alerts | orderBy: '-level'" class="row alert-container" ng-class="{'alert-high' : entry.level>0.5,
+        'alert-med' : entry.level<=0.5 && entry.level > 0.3}">
+        <h3>Potential threat - {{entry.timestamp}}</h3>
+        <span ng-class="{'glyphicon glyphicon-exclamation-sign' : entry.level>0.1}"></span>
+        <span class="glyphicon" ng-class="{'glyphicon-fire' : entry.level >0.5 , 'glyphicon-eye-open' : entry.level <=0.5 && entry.level > 0.3}"></span>
+      </div>
+    </div>
+  </div>
+  <!--<div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <img src="http://cam-cityhall1.delft.nl/mjpg/video.mjpg?timestamp=1486272270028" id="camera-feed"/>
+    </div>
+  </div>-->
+</div>

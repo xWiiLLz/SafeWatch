@@ -1,0 +1,30 @@
+{
+  "name": "shooter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xWiiLLz/Cegep-plebs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xWiiLLz/Cegep-plebs/issues"
+  },
+  "homepage": "https://github.com/xWiiLLz/Cegep-plebs#readme",
+  "dependencies": {
+    "base64-img": "^1.0.3",
+    "body-parser": "^1.16.0",
+    "cors": "^2.8.1",
+    "express": "^4.14.1",
+    "fluent-ffmpeg": "^2.1.0",
+    "moment": "^2.17.1",
+    "path": "^0.12.7",
+    "twilio": "^2.11.1",
+    "watson-developer-cloud": "^2.17.0"
+  }
+}

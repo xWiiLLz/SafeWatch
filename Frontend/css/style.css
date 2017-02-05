@@ -1,0 +1,102 @@
+/* Hackatown 2017 - William Bergeron-Drouin, Alexander Shevchenko & Alexandre Parent */
+
+/*
+input[type=file] {
+    background: #F8F8F8;
+    border: 5px dashed #DDD;
+    width: 200px;
+    height: 65px;
+    text-align: center;
+    padding-top: 25px;
+    margin: 10px;
+}*/
+html{
+	position:relative;
+	min-height:100%;
+}
+body{
+	background-color:#ececec;
+	margin-bottom:30px;
+}
+.uploaded-img{
+	max-width:600px;
+	height:auto;
+}
+
+.banner{
+	background-color: #c93434;
+	color:#FFF;
+	padding:50px;
+	text-align:center;
+	margin-bottom:40px;
+}
+.banner h1{
+	font-size:48px;
+	font-family: 'Roboto', sans-serif;
+}
+
+#shot{
+	visibility:hidden;
+	position:absolute;
+	left:-2400px;
+	top:-1000px;
+}
+#video{
+	display:block;
+}
+p.center{
+	text-align:center;
+	margin:10px;
+	font-size:1.1em;
+}
+
+h2.center{
+	text-align:center;
+	font-family: 'Roboto', sans-serif;
+}
+span.glyphicon{
+	font-size:30px;
+}
+.alert-container{
+	text-align:center;
+	margin:0 5%;
+	padding:15px 20px 20px 30px;
+	margin-bottom:20px;
+}
+.alert-high{
+	background-color:#c93434;
+	color:#FFF;
+	border-bottom: white;
+}
+.push
+{
+    height:38px;
+}
+
+footer{
+	position:absolute;
+	bottom:0;
+	width:100%;
+	background-color:#333;
+	color:#fff;
+	min-height:60px;
+	padding-top: 20px;
+	text-align: center;
+}
+
+.lilBox{
+	color: white;
+	min-height: 312px;
+	overflow:inherit;
+	position:relative;
+}
+
+.red{
+}
+
+.borders{
+	background-color: #333;
+	text-align: center;
+	padding: 40px 40px 40px 40px;
+	margin-top: 80px;
+}
