@@ -2,7 +2,8 @@ English below,
 ## Inspiration
 Avec le drame survenu à Québec récemment, nous étions motivés à augmenter la vitesse à laquelle la population peut répondre à une telle situation.
 ## Ce que l'application fait
-Notre API reçoit des snapshots de flux vidéos et renvoi un niveau de menace, correspondant à la possible présence d'armes dans l'image. Si une menace est détectée, l'interface web est tout de suite notifiée, ainsi que toute personne pouvant être pertinente d'aviser via messagerie texte. (Par exemple, l'application pourrait envoyer ces informations au poste de police le plus proche de l'événement en question) ## Comment l'avons-nous construit?
+Notre API reçoit des snapshots de flux vidéos et renvoi un niveau de menace, correspondant à la possible présence d'armes dans l'image. Si une menace est détectée, l'interface web est tout de suite notifiée, ainsi que toute personne pouvant être pertinente d'aviser via messagerie texte. (Par exemple, l'application pourrait envoyer ces informations au poste de police le plus proche de l'événement en question) 
+## Comment l'avons-nous construit?
 Le back-end roule sous Node.js et Express, et utilise Watson de IBM pour analyser le niveau de menace à l'aide du deep learning.
 ## Obstacles/défis rencontrés
 L'entrainement de Watson fut le plus gros défi de ce projet.
@@ -11,14 +12,14 @@ Deuxièmement, il n'y a pas beaucoup de ressources graphiques impliquant un indi
 ## Ce dont nous sommes fiers
 Nous avons un produit final à présenter. Certes, il n'est pas parfait, mais nous sommes capables d'émettre des alertes pour certains flux vidéos, qui représentent de réels cas de crise imminente. 
 ## Ce que nous avons appris 
-Que le deep learning peut être très ardu, et qu'il faut requérir une foule de données pour définir des modèles personnalisés qui fonctionnent.
+Que le deep learning peut être très ardu, et qu'il faut avoir une foule de données pour définir des modèles personnalisés qui fonctionnent.
 Aussi, 3 hackathons de suite, c'est de la folie!
 ## Quelles sont les prochaines étapes pour SafeWatch
 La prochaine étape serait de fournir un plus grand nombre de données à notre application deep learning, pour qu'elle puisse fournir de meilleures analyses.
 Aussi, nous aimerions connecter notre API avec des flux de caméras de surveillance en direct.
-
-
-#ENGLISH
+  
+  
+# English
 ## Inspiration
 Given the recent events in Quebec city, we were inspired to change how quickly we are able to respond to threat.
 ## What it does
